@@ -6,8 +6,8 @@ For further information visit us at [itis.network](https://itis.network/) or vis
 # Coin Specs
 
 <p>• PoW Algorithm: Quark Algo<br>
-• Premine: (1 Block) 300,003 ITIS<br>
-• PoW Blocks: 2 - 86400<br>
+• Premine: (1-200 Blocks) 323.880 ITIS<br>
+• PoW Blocks: 200 - 86400<br>
 • PoS Blocks: Starting from 86401<br>
 • Block Time: 120 Seconds<br>
 • PoW Ending: ca. 120 Days<br>
