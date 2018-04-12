@@ -3,7 +3,7 @@ Release Process
 
 Before every release candidate:
 
-* Update translations (ping Fuzzbawls on Slack) see [translation_process.md](https://github.com/listedlinked/itis/blob/master/doc/translation_process.md#synchronising-translations).
+* Update translations (ping Fuzzbawls on Slack) see [translation_process.md](https://github.com/itisdevteam/itis/blob/master/doc/translation_process.md#synchronising-translations).
 
 Before every minor and major release:
 
@@ -24,10 +24,10 @@ If you're using the automated script (found in [contrib/gitian-build.sh](/contri
 Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
-    git clone https://github.com/listedlinked/itis.SIGS.git
-    git clone https://github.com/listedlinked/itis-DETACHED.SIGS.git
+    git clone https://github.com/itisdevteam/itis.SIGS.git
+    git clone https://github.com/itisdevteam/itis-DETACHED.SIGS.git
     git clone https://github.com/devrandom/gitian-builder.git
-    git clone https://github.com/listedlinked/itis.git
+    git clone https://github.com/itisdevteam/itis.git
 
 ### ITIS maintainers/release engineers, suggestion for writing release notes
 

@@ -22,7 +22,7 @@ packages:
 - "ca-certificates"
 - "python"
 remotes:
-- "url": "https://github.com/listedlinked/itis.git"
+- "url": "https://github.com/itisdevteam/itis.git"
   "dir": "itis"
 files: []
 script: |

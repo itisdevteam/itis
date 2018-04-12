@@ -44,7 +44,7 @@ Instructions: Homebrew
 
 1. Clone the github tree to get the source code and go into the directory.
 
-        git clone https://github.com/listedlinked/itis
+        git clone https://github.com/itisdevteam/itis
         cd ITIS
 
 2.  Build itisd:

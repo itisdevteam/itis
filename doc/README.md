@@ -41,7 +41,7 @@ The following are developer notes on how to build ITIS on your native platform. 
 
 Development
 ---------------------
-The ITIS repo's [root README](https://github.com/listedlinked/itis/blob/master/README.md) contains relevant information on the development process and automated testing.
+The ITIS repo's [root README](https://github.com/itisdevteam/itis/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
