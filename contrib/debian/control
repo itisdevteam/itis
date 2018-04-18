@@ -23,8 +23,8 @@ Build-Depends: debhelper,
  libprotobuf-dev, protobuf-compiler
 Standards-Version: 3.9.2
 Homepage:http://bit.itiss/
-Vcs-Git: git://github.com/itisdevteam/itis
-Vcs-Browser: http://github.com/itisdevteam/itis
+Vcs-Git: git://github.com/listedlinked/itis
+Vcs-Browser: http://github.com/listedlinked/itis
 
 Package: itisd
 Architecture: any
