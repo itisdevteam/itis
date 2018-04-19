@@ -7,7 +7,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/listedlinked/itis.SIGS.git"
+- "url": "https://github.com/itisdevteam/itis.SIGS.git"
   "dir": "signature"
 files:
 - "itis-osx-unsigned.tar.gz"

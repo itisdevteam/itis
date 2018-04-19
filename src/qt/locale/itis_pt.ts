@@ -3654,8 +3654,8 @@ https://www.transifex.com/itis-crypto/itis-wallet-translations/</translation>
         <translation>Aviso: Por favor verifique que a data e a hora do computador está correcta! Se o relógio estiver errado o ITIS.Network não vai funcionar correctamente.</translation>
     </message>
     <message>
-        <source>(60222 could be used only on mainnet)</source>
-        <translation>(60222 apenas pode ser usado para mainnet)</translation>
+        <source>(60202 could be used only on mainnet)</source>
+        <translation>(60202 apenas pode ser usado para mainnet)</translation>
     </message>
     <message>
         <source>(default: %s)</source>
@@ -4064,8 +4064,8 @@ https://www.transifex.com/itis-crypto/itis-wallet-translations/</translation>
         <translation>masternodeprivkey inválida. Por favor reveja a documentação.</translation>
     </message>
     <message>
-        <source>(must be60222 for mainnet)</source>
-        <translation>(deve ser60222 para mainnet)</translation>
+        <source>(must be60202 for mainnet)</source>
+        <translation>(deve ser60202 para mainnet)</translation>
     </message>
     <message>
         <source>Can't find random Masternode.</source>

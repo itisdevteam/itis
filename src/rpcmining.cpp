@@ -576,15 +576,22 @@ Value getblocktemplate(const Array& params, bool fHelp)
         ExtractDestination(pblock->payee, address1);
         CBitcoinAddress address2(address1);
         result.push_back(Pair("payee", address2.ToString().c_str()));
-        result.push_back(Pair("payee_amount", (int64_t)pblock->vtx[0].vout[1].nValue));
+		
+		//TEMPORARY
+		if(pindexPrev->nHeight >= 210000 && pindexPrev->nHeight <= 225000)
+			result.push_back(Pair("payee_amount", (int64_t)pblock->vtx[0].vout[1].nValue*2));
+		else
+			result.push_back(Pair("payee_amount", (int64_t)pblock->vtx[0].vout[1].nValue));
     } else {
         result.push_back(Pair("payee", ""));
         result.push_back(Pair("payee_amount", ""));
     }
-
+	
     result.push_back(Pair("masternode_payments", pblock->nTime > Params().StartMasternodePayments()));
     result.push_back(Pair("enforce_masternode_payments", true));
 
+	result.push_back(Pair("developerfee", (int64_t)pblock->vtx[0].vout[2].nValue));
+	result.push_back(Pair("developerfee_wallet", "i4uma19HCrJ9Y3QXTLjaBYkzWghFXAiEHe"));
     return result;
 }
 
