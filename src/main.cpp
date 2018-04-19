@@ -1631,14 +1631,14 @@ int64_t GetBlockValue(int nHeight)
 	int64_t nSubsidy;
 	
 	if(nHeight <= 200 && nHeight > 0) {
-        nSubsidy = 120 * COIN;
-	} else if (nHeight > 200 && nHeight <= 5040) {
+        nSubsidy = 2 * COIN;
+	} else if (nHeight > 200 && nHeight <= 700) {
+		nSubsidy = 120 * COIN;
+	} else if (nHeight > 700 && nHeight <= 5040) {
 		nSubsidy = 100 * COIN;
 	} else if (nHeight > 5040 && nHeight <= 14400) {
-		nSubsidy = 90 * COIN;
-	} else if (nHeight > 14400 && nHeight <= 21600) {
 		nSubsidy = 80 * COIN;
-	} else if (nHeight > 21600 && nHeight <= 43200) {
+	} else if (nHeight > 14400 && nHeight <= 43200) {
 		nSubsidy = 70 * COIN;
 	} else if (nHeight > 43200 && nHeight <= 86400) { // 86400 => LAST POW BLOCK
 		nSubsidy = 60 * COIN;
@@ -2558,7 +2558,6 @@ bool DisconnectBlocksAndReprocess(int blocks)
 
 /*
     DisconnectBlockAndInputs
-
     Remove conflicting blocks for successful InstantX transaction locks
     This should be very rare (Probably will never happen)
 */
@@ -3247,10 +3246,8 @@ bool CheckWork(const CBlock block, CBlockIndex* const pindexPrev)
     if (block.IsProofOfWork() && (pindexPrev->nHeight + 1 <= 68589)) {
         double n1 = ConvertBitsToDouble(block.nBits);
         double n2 = ConvertBitsToDouble(nBitsRequired);
-
         if (abs(n1 - n2) > n1 * 0.5)
             return error("%s : incorrect proof of work (DGW pre-fork) - %f %f %f at %d", __func__, abs(n1 - n2), n1, n2, pindexPrev->nHeight + 1);
-
         return true;
     }
 */
@@ -5450,7 +5447,6 @@ int ActiveProtocol()
         if (chainActive.Tip()->nHeight >= Params().ModifierUpgradeBlock())
             return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
     }
-
     return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
 */
 
