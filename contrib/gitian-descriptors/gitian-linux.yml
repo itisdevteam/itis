@@ -1,5 +1,5 @@
 ---
-name: "itis-linux-1.0.0.1"
+name: "itis-linux-1.0.1.1"
 enable_cache: true
 suites:
 - "trusty"

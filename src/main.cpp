@@ -69,7 +69,7 @@ bool fCheckBlockIndex = false;
 unsigned int nCoinCacheSize = 5000;
 bool fAlerts = DEFAULT_ALERTS;
 
-unsigned int nStakeMinAge = 12 * 60 * 60;	// Minimum stake age 12 hours!
+unsigned int nStakeMinAge = 60 * 60;	// Minimum stake age 1 hour!
 int64_t nReserveBalance = 0;
 
 /** Fees smaller than this (in duffs) are considered zero fee (for relaying and mining)
@@ -1636,19 +1636,37 @@ int64_t GetBlockValue(int nHeight)
 		nSubsidy = 120 * COIN;
 	} else if (nHeight > 700 && nHeight <= 5040) {
 		nSubsidy = 100 * COIN;
-	} else if (nHeight > 5040 && nHeight <= 14400) {
+	} else if (nHeight > 5040 && nHeight <= 7000) {// 7000 => LAST POW BLOCK
 		nSubsidy = 80 * COIN;
-	} else if (nHeight > 14400 && nHeight <= 43200) {
-		nSubsidy = 70 * COIN;
-	} else if (nHeight > 43200 && nHeight <= 86400) { // 86400 => LAST POW BLOCK
+	} else if (nHeight > 7000 && nHeight <= 14000) {// 7001 => FIRST POS BLOCK
+		nSubsidy = 500 * COIN;
+	} else if (nHeight > 14000 && nHeight <= 21000) { 
+		nSubsidy = 460 * COIN;
+	} else if (nHeight > 21000 && nHeight <= 28000) { 
+		nSubsidy = 420 * COIN;
+	} else if (nHeight > 28000 && nHeight <= 35000) {
+		nSubsidy = 380 * COIN;
+	} else if (nHeight > 35000 && nHeight <= 42000) {
+		nSubsidy = 340 * COIN;
+	} else if (nHeight > 42000 && nHeight <= 49000) {
+		nSubsidy = 300 * COIN;
+	} else if (nHeight > 49000 && nHeight <= 56000) {
+		nSubsidy = 260 * COIN;		
+	} else if (nHeight > 56000 && nHeight <= 63000) {
+		nSubsidy = 220 * COIN;		
+	} else if (nHeight > 63000 && nHeight <= 70000) {
+		nSubsidy = 180 * COIN;
+	} else if (nHeight > 70000 && nHeight <= 77000) {
+		nSubsidy = 140 * COIN;
+	} else if (nHeight > 77000 && nHeight <= 84000) {
+		nSubsidy = 100 * COIN;
+	} else if (nHeight > 84000 && nHeight <= 91000) {
 		nSubsidy = 60 * COIN;
-	} else if (nHeight > 86401 && nHeight <= 172802) { // 86401 => FIRST POS BLOCK
-		nSubsidy = 40 * COIN;
-	} else if (nHeight > 172802 && nHeight <= 345604) {
-		nSubsidy = 30 * COIN;
-	} else if (nHeight > 345604 && nHeight <= 691208) {
+	} else if (nHeight > 91000 && nHeight <= 98000) {
 		nSubsidy = 20 * COIN;
-	} else if (nHeight > 691208) {
+	} else if (nHeight > 105000 && nHeight <= 112000) {
+		nSubsidy = 10 * COIN;
+	} else if (nHeight > 112000) {
 		nSubsidy = 5 * COIN;
 	}
 	
@@ -1671,19 +1689,9 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
         ret = blockValue / 100 * 80;
 	} else if (nHeight > 200 && nHeight <= 5040) {
         ret = blockValue / 100 * 75;
-	} else if (nHeight > 5040 && nHeight <= 14400) {
+	} else if (nHeight > 5040 && nHeight <= 7000) {
         ret = blockValue / 100 * 70;
-		} else if (nHeight > 14400 && nHeight <= 14500) {
-        ret = blockValue / 100 * 65;
-	} else if (nHeight > 14500 && nHeight <= 20600) {
-        ret = blockValue / 100 * 60;
-	} else if (nHeight > 20600 && nHeight <= 21600) {
-        ret = blockValue / 100 * 55;
-	} else if (nHeight > 21600 && nHeight <= 43200) {
-        ret = blockValue / 100 * 50;
-	} else if (nHeight > 43200 && nHeight <= 86400) {
-        ret = blockValue / 100 * 50;
-	} else if (nHeight > 86400) {
+	} else if (nHeight > 7000) {
 		
 		int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
 		
@@ -1691,7 +1699,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
 			nMasternodeCount = mnodeman.stable_size();
 		}
 		
-		int64_t mNodeCoins = nMasternodeCount * 10000 * COIN;
+		int64_t mNodeCoins = nMasternodeCount * 25000 * COIN;
 		
 		if (mNodeCoins == 0) {
             ret = 0;

@@ -111,32 +111,12 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet* 
 					}
 				} else if (nHeight > 700 && nHeight <= 5040) {
 					nSubsidy = 100 * COIN;
-					if(nSubsidy / 100 * 70 == txout.nValue) {
+					if(nSubsidy / 100 * 75 == txout.nValue) {
 						sub.type = TransactionRecord::MNReward;
 					}
-				} else if (nHeight > 5040 && nHeight <= 14400) {
+				} else if (nHeight > 5040 && nHeight <= 7000) { // 7000 => LAST POW BLOCK
 					nSubsidy = 80 * COIN;
-					if(nSubsidy / 100 * 65 == txout.nValue || nSubsidy / 100 * 60 == txout.nValue ) {
-						sub.type = TransactionRecord::MNReward;
-					}
-				} else if (nHeight > 14400 && nHeight <= 20600) {
-					nSubsidy = 70 * COIN;
-					if(nSubsidy / 100 * 60 == txout.nValue) {
-						sub.type = TransactionRecord::MNReward;
-					}
-				} else if (nHeight > 20600 && nHeight <= 21600) {
-					nSubsidy = 70 * COIN;
-					if(nSubsidy / 100 * 55 == txout.nValue) {
-						sub.type = TransactionRecord::MNReward;
-					}
-				} else if (nHeight > 21600 && nHeight <= 43200) {
-					nSubsidy = 70 * COIN;
-					if(nSubsidy / 100 * 50 == txout.nValue) {
-						sub.type = TransactionRecord::MNReward;
-					}
-				} else if (nHeight > 43200 && nHeight <= 86400) { // 86400 => LAST POW BLOCK
-					nSubsidy = 60 * COIN;
-					if(nSubsidy / 100 * 50 == txout.nValue) {
+					if(nSubsidy / 100 * 70 == txout.nValue) {
 						sub.type = TransactionRecord::MNReward;
 					}
 				}

@@ -55,13 +55,15 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
-    boost::assign::map_list_of(0, uint256("0x0000058ef5da80a3f6ffcb867a4a3e3d2509e279be8037453bf4115196465177"));
+    boost::assign::map_list_of
+	(0, uint256("0x0000058ef5da80a3f6ffcb867a4a3e3d2509e279be8037453bf4115196465177"))
+	(6452, uint256("0x000000000003cd67a08dab2c5381738e0ae18d8124ab2f7a8fcb0c747b462761"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1493667068, // * UNIX timestamp of last checkpoint block // 04/03/2018 @ 12:00pm
-    0,    // * total number of transactions between genesis and last checkpoint
+    1524649373, // * UNIX timestamp of last checkpoint block // 04/03/2018 @ 12:00pm
+    7347,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
-    0        // * estimated number of transactions per day after checkpoint
+    500        // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
@@ -107,10 +109,10 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 2 * 60; // ITIS: Look at last 120 seconds caralculation difficulty
         nTargetSpacing = 2 * 60;  // ITIS: 2 minutes per  block
-        nLastPOWBlock = 86400;
+        nLastPOWBlock = 7000;
         nMaturity = 115;
         nMasternodeCountDrift = 20;
-		nMasternodeColleteralLimxDev = 10000; //Params().MasternodeColleteralLimxDev()
+		nMasternodeColleteralLimxDev = 25000; //Params().MasternodeColleteralLimxDev()
         nModifierUpdateBlock = 1; // we use the version 2 for dmd
         nMaxMoneyOut = 100000000 * COIN; //max coins 
 
