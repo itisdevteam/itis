@@ -109,7 +109,7 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 2 * 60; // ITIS: Look at last 120 seconds caralculation difficulty
         nTargetSpacing = 2 * 60;  // ITIS: 2 minutes per  block
-        nLastPOWBlock = 7040;
+        nLastPOWBlock = 7070;
         nMaturity = 115;
         nMasternodeCountDrift = 20;
 		nMasternodeColleteralLimxDev = 25000; //Params().MasternodeColleteralLimxDev()
