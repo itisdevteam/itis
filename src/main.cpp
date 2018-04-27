@@ -1664,6 +1664,8 @@ int64_t GetBlockValue(int nHeight)
 		nSubsidy = 60 * COIN;
 	} else if (nHeight > 91000 && nHeight <= 98000) {
 		nSubsidy = 20 * COIN;
+	} else if (nHeight > 98000 && nHeight <= 105000) {
+		nSubsidy = 20 * COIN;		
 	} else if (nHeight > 105000 && nHeight <= 112000) {
 		nSubsidy = 10 * COIN;
 	} else if (nHeight > 112000) {
@@ -1691,36 +1693,39 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
         ret = blockValue / 100 * 75;
 	} else if (nHeight > 5040 && nHeight <= 7000) {
         ret = blockValue / 100 * 70;
-	} else if (nHeight > 7000) {
+	} else if (nHeight > 7000 && nHeight <= 14000) {
+        ret = blockValue / 100 * 70;
+	} else if (nHeight > 14000 && nHeight <= 21000) {
+        ret = blockValue / 100 * 70;
+	} else if (nHeight > 21000 && nHeight <= 28000) {
+        ret = blockValue / 100 * 70;
+	} else if (nHeight > 28000 && nHeight <= 35000) {
+        ret = blockValue / 100 * 70;
+	} else if (nHeight > 35000 && nHeight <= 42000) {
+        ret = blockValue / 100 * 70;
+	} else if (nHeight > 42000 && nHeight <= 49000) {
+        ret = blockValue / 100 * 70;
+	} else if (nHeight > 49000 && nHeight <= 56000) {
+        ret = blockValue / 100 * 70;
+	} else if (nHeight > 56000 && nHeight <= 63000) {
+        ret = blockValue / 100 * 70;
+	} else if (nHeight > 63000 && nHeight <= 70000) {
+        ret = blockValue / 100 * 70;
+	} else if (nHeight > 70000 && nHeight <= 77000) {
+        ret = blockValue / 100 * 70;
+	} else if (nHeight > 77000 && nHeight <= 84000) {
+        ret = blockValue / 100 * 70;
+	} else if (nHeight > 84000 && nHeight <= 91000) {
+        ret = blockValue / 100 * 70;
+	} else if (nHeight > 91000 && nHeight <= 98000) {
+        ret = blockValue / 100 * 70;
+	} else if (nHeight > 98000 && nHeight <= 105000) {
+        ret = blockValue / 100 * 70;
+	} else if (nHeight > 105000 && nHeight <= 112000) {
+        ret = blockValue / 100 * 70;		
+	} else if (nHeight > 112000) {
 		
-		int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
-		
-		if(nMasternodeCount < 1) {
-			nMasternodeCount = mnodeman.stable_size();
-		}
-		
-		int64_t mNodeCoins = nMasternodeCount * 25000 * COIN;
-		
-		if (mNodeCoins == 0) {
-            ret = 0;
-		} else {
-			double lockedCoinValue = mNodeCoins / nMoneySupply;
-			
-			
-			double masternodeMultiplier = 1 - lockedCoinValue;
-			
-			if(masternodeMultiplier < .1) {
-				masternodeMultiplier = .1;
-			} else if(masternodeMultiplier > .9) {
-				masternodeMultiplier = .9;
-			}
-			
-			LogPrintf("[LIBRA] Adjusting Libra at height %d with %d masternodes (%d % locked ITIS) and %d ITIS supply at %ld\n", nHeight, nMasternodeCount, lockedCoinValue*100, nMoneySupply, GetTime());
-			LogPrintf("[LIBRA] Masternode: %d\n", masternodeMultiplier*100);
-			LogPrintf("[LIBRA] Staker: %d\n", (1 - masternodeMultiplier)*100);
-			
-			ret = blockValue * masternodeMultiplier;
-		}
+
 		
 	}
 	
